@@ -11,10 +11,15 @@ function GenreList() {
           <ListItem key={genre.id} paddingY={"4px"}>
             <HStack paddingX={5}>
               <Image
+                borderRadius={10}
+                overflow={"hidden"}
+                boxShadow={"dark-lg"}
                 boxSize={"32px"}
                 src={getCroppedImageURL(genre.image_background)}
               ></Image>
-              <Text fontSize={"lg"}>{genre.name}</Text>
+              <Text fontSize={"lg"} fontWeight={"bold"}>
+                {genre.name}
+              </Text>
             </HStack>
           </ListItem>
         ))}
