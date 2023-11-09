@@ -1,9 +1,13 @@
-import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenre";
 import getCroppedImageURL from "../services/image-url";
 
 function GenreList() {
-  const { genres } = useGenres();
+  const { genres, loading, error } = useGenres();
+
+  if (error) return null;
+  if (loading) return <Spinner marginTop={"32px"} marginLeft={"24px"} />;
+
   return (
     <>
       <List marginTop={"32px"}>
