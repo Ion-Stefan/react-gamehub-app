@@ -9,6 +9,7 @@ function ColorModeSwitch() {
         Normal
       </Text>
       <Switch
+        id="switch"
         colorScheme="green"
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
