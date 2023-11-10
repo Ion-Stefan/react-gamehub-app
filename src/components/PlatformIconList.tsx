@@ -7,9 +7,12 @@ import {
   FaApple,
   FaLinux,
   FaAndroid,
+  FaCode,
+  FaSave,
+  FaAtlas,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
+import { SiAtari, SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
 
@@ -28,6 +31,10 @@ function PlatformIconList({ platforms }: Props) {
     nintendo: SiNintendo,
     ios: MdPhoneIphone,
     web: BsGlobe,
+    atari: SiAtari,
+    amiga: FaCode,
+    sega: FaSave,
+    "3do": FaAtlas,
   };
 
   return (

@@ -9,33 +9,51 @@ import {
 
 import { BsChevronDown } from "react-icons/bs";
 
-function SortSelector() {
+interface Props {
+  onSelectSortOrder: (sortOrder: string) => void;
+  sortOrder: string;
+}
+
+function SortSelector({ onSelectSortOrder, sortOrder }: Props) {
+  const sortOrders = [
+    { value: "", label: "Relevance" },
+    { value: "-added", label: "Date added" },
+    { value: "name", label: "Name" },
+    { value: "-released", label: "Release Date" },
+    { value: "-metacritic", label: "Popularity" },
+    { value: "-rating", label: "Average rating" },
+  ];
+
+  const currentSortOrder = sortOrders.find(
+    (order) => order.value === sortOrder
+  );
+
   return (
     <>
       <Box paddingLeft={"36px"} paddingTop={"36px"}>
         <Menu>
-          <MenuButton width={"200px"} as={Button} rightIcon={<BsChevronDown />}>
-            Order by: Relevance
+          <MenuButton
+            fontSize={"14px"}
+            width={"225px"}
+            as={Button}
+            rightIcon={<BsChevronDown />}
+            textAlign={"left"}
+          >
+            Order by: {currentSortOrder?.label}
           </MenuButton>
-          <MenuList marginLeft={0} minW="0" w={"200px"}>
-            <MenuItem padding={1} minW="0" w={"200px"}>
-              Relevance
-            </MenuItem>
-            <MenuItem padding={1} minW="0" w={"200px"}>
-              Date added
-            </MenuItem>
-            <MenuItem padding={1} minW="0" w={"200px"}>
-              Name
-            </MenuItem>
-            <MenuItem padding={1} minW="0" w={"200px"}>
-              Release Date
-            </MenuItem>
-            <MenuItem padding={1} minW="0" w={"200px"}>
-              Popularity
-            </MenuItem>
-            <MenuItem padding={1} minW="0" w={"200px"}>
-              Average Rating
-            </MenuItem>
+          <MenuList marginLeft={0} minW="0" w={"225px"}>
+            {sortOrders.map((order) => (
+              <MenuItem
+                onClick={() => onSelectSortOrder(order.value)}
+                key={order.value}
+                padding={1}
+                minW="0"
+                w={"225px"}
+                textAlign={"left"}
+              >
+                {order.label}
+              </MenuItem>
+            ))}
           </MenuList>
         </Menu>
       </Box>
