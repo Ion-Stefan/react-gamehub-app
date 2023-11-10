@@ -34,21 +34,21 @@ function SortSelector({ onSelectSortOrder, sortOrder }: Props) {
         <Menu>
           <MenuButton
             fontSize={"14px"}
-            width={"225px"}
+            width={"200px"}
             as={Button}
             rightIcon={<BsChevronDown />}
             textAlign={"left"}
           >
             Order by: {currentSortOrder?.label}
           </MenuButton>
-          <MenuList marginLeft={0} minW="0" w={"225px"}>
+          <MenuList marginLeft={0} minW="0" w={"200px"}>
             {sortOrders.map((order) => (
               <MenuItem
                 onClick={() => onSelectSortOrder(order.value)}
                 key={order.value}
                 padding={1}
                 minW="0"
-                w={"225px"}
+                w={"200px"}
                 textAlign={"left"}
               >
                 {order.label}

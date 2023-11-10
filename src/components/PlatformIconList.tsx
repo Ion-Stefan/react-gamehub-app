@@ -41,6 +41,7 @@ function PlatformIconList({ platforms }: Props) {
     <HStack alignItems={"center"} marginY={2}>
       {platforms.map((platform) => (
         <Icon
+          fontSize={{ base: "12px", sm: "16px", md: "16", lg: "20" }}
           key={platform.id}
           as={iconMap[platform.slug]}
           color={"gray.500"}
