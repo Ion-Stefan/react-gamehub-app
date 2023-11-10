@@ -4,13 +4,18 @@ function ColorModeSwitch() {
   const { toggleColorMode, colorMode } = useColorMode();
 
   return (
-    <HStack>
+    <HStack marginRight={"24px"}>
+      <Text fontWeight={"bold"} fontSize={"16px"}>
+        Normal
+      </Text>
       <Switch
         colorScheme="green"
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
       />
-      <Text>Dark Mode</Text>
+      <Text fontWeight={"bold"} fontSize={"16px"}>
+        Dark
+      </Text>
     </HStack>
   );
 }
