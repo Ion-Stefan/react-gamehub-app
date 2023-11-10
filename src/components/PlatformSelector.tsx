@@ -23,14 +23,24 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
     <>
       <Box paddingLeft={"36px"} paddingTop={"36px"}>
         <Menu>
-          <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+          <MenuButton
+            textAlign={"left"}
+            width={"200px"}
+            maxW={"200px"}
+            as={Button}
+            rightIcon={<BsChevronDown />}
+          >
             {selectedPlatform?.name || "Platforms"}
           </MenuButton>
-          <MenuList>
+          <MenuList marginLeft={0} minW="0" w={"200px"}>
             {data.map((platform) => (
               <MenuItem
+                padding={1}
+                minW="0"
+                w={"200px"}
                 onClick={() => onSelectPlatform(platform)}
                 key={platform.id}
+                textAlign={"left"}
               >
                 {platform.name}
               </MenuItem>
