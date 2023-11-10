@@ -4,7 +4,7 @@ function GameCardSkeleton() {
   return (
     <>
       <Card borderRadius={10} overflow={"hidden"} boxShadow={"dark-lg"}>
-        <Skeleton height={"350px"}>
+        <Skeleton height={"300px"} width={"300px"}>
           <CardBody>
             <SkeletonText />
           </CardBody>

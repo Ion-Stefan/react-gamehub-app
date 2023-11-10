@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   HStack,
   Image,
@@ -18,11 +19,16 @@ function GenreList({ onSelectGenre }: Props) {
   const { data, loading, error } = useGenres();
 
   if (error) return null;
-  if (loading) return <Spinner marginTop={"32px"} marginLeft={"24px"} />;
+  if (loading)
+    return (
+      <Box width={"265px"} height={"265px"}>
+        <Spinner marginTop={"32px"} marginLeft={"24px"} />
+      </Box>
+    );
 
   return (
     <>
-      <List marginTop={"32px"}>
+      <List marginTop={"32px"} width={"265px"}>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY={"4px"}>
             <HStack paddingX={5}>
