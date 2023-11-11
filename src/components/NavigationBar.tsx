@@ -3,7 +3,11 @@ import logo from "../assets/logo_black.svg";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-function NavigationBar() {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+function NavigationBar({ onSearch }: Props) {
   function refreshPage() {
     window.location.reload();
   }
@@ -11,18 +15,18 @@ function NavigationBar() {
   return (
     <>
       <HStack
-        display={"flex"}
         paddingX={4}
         alignItems={"center"}
         marginTop={"32px"}
+        justifyContent={"space-between"}
       >
         <Image
           cursor={"pointer"}
           onClick={refreshPage}
           src={logo}
-          boxSize={"60px"}
+          boxSize={{ base: "30px", sm: "60px" }}
         />
-        <SearchInput />
+        <SearchInput onSearch={onSearch} />
         <ColorModeSwitch />
       </HStack>
     </>

@@ -1,10 +1,11 @@
 import { HStack, Switch, Text, useColorMode } from "@chakra-ui/react";
+import { BsMoonFill } from "react-icons/bs";
 
 function ColorModeSwitch() {
   const { toggleColorMode, colorMode } = useColorMode();
 
   return (
-    <HStack marginRight={"24px"}>
+    <HStack marginRight={"12px"}>
       <Switch
         id="switch"
         colorScheme="green"
@@ -12,7 +13,7 @@ function ColorModeSwitch() {
         onChange={toggleColorMode}
       />
       <Text fontWeight={"bold"} fontSize={"16px"}>
-        Dark
+        {<BsMoonFill />}
       </Text>
     </HStack>
   );
