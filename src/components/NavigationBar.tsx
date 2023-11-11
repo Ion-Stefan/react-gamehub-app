@@ -1,6 +1,7 @@
 import { HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/logo_black.svg";
 import ColorModeSwitch from "./ColorModeSwitch";
+import SearchInput from "./SearchInput";
 
 function NavigationBar() {
   function refreshPage() {
@@ -10,7 +11,7 @@ function NavigationBar() {
   return (
     <>
       <HStack
-        justifyContent={"space-between"}
+        display={"flex"}
         paddingX={4}
         alignItems={"center"}
         marginTop={"32px"}
@@ -21,6 +22,7 @@ function NavigationBar() {
           src={logo}
           boxSize={"60px"}
         />
+        <SearchInput />
         <ColorModeSwitch />
       </HStack>
     </>

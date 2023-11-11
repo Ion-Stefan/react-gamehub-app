@@ -5,9 +5,6 @@ function ColorModeSwitch() {
 
   return (
     <HStack marginRight={"24px"}>
-      <Text fontWeight={"bold"} fontSize={"16px"}>
-        Normal
-      </Text>
       <Switch
         id="switch"
         colorScheme="green"
