@@ -40,14 +40,12 @@ function PlatformIconList({ platforms }: Props) {
   return (
     <HStack alignItems={"center"} marginY={2}>
       {platforms.map((platform) => (
-        <HStack flexWrap={"wrap"}>
-          <Icon
-            fontSize={"16px"}
-            key={platform.id}
-            as={iconMap[platform.slug]}
-            color={"gray.500"}
-          />
-        </HStack>
+        <Icon
+          fontSize={"16px"}
+          key={platform.id}
+          as={iconMap[platform.slug]}
+          color={"gray.500"}
+        />
       ))}
     </HStack>
   );
