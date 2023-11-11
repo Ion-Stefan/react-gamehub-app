@@ -18,7 +18,7 @@ function GameGrid({ gameQuery }: Props) {
     <>
       {error && <Text>"Request failed with status of 404"</Text>}
       <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, "2xl": 5 }}
+        columns={{ sm: 1, md: 2, lg: 2, xl: 3, "2xl": 5 }}
         padding={10}
         spacing={10}
       >

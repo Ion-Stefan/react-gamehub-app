@@ -11,7 +11,12 @@ interface Props {
 function GameCard({ game }: Props) {
   return (
     <>
-      <Card borderRadius={10} overflow={"hidden"} boxShadow={"dark-lg"}>
+      <Card
+        borderRadius={10}
+        objectFit={"cover"}
+        overflow={"hidden"}
+        boxShadow={"dark-lg"}
+      >
         <Image src={getCroppedImageURL(game.background_image)} />
         <CardBody>
           <Heading fontSize={"2xl"}>{game.name}</Heading>
@@ -19,9 +24,8 @@ function GameCard({ game }: Props) {
             <PlatformIconList
               platforms={game.parent_platforms.map((p) => p.platform)}
             />
-
-            <CriticScore score={game.metacritic} />
           </HStack>
+          <CriticScore score={game.metacritic} />
         </CardBody>
       </Card>
     </>
