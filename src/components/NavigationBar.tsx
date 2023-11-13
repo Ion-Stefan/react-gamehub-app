@@ -1,16 +1,17 @@
-import { HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/logo_black.svg";
-import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
+import { HStack, Switch, Text, useColorMode, Image } from "@chakra-ui/react";
+import { BsMoonFill } from "react-icons/bs";
 
-interface Props {
+export interface Color {
   onSearch: (searchText: string) => void;
 }
 
-function NavigationBar({ onSearch }: Props) {
+function NavigationBar({ onSearch }: Color) {
   function refreshPage() {
     window.location.reload();
   }
+  const { toggleColorMode, colorMode } = useColorMode();
 
   return (
     <>
@@ -21,13 +22,25 @@ function NavigationBar({ onSearch }: Props) {
         justifyContent={"space-between"}
       >
         <Image
+          filter={colorMode === "dark" ? "invert(1)" : "invert(0)"}
           cursor={"pointer"}
           onClick={refreshPage}
           src={logo}
           boxSize={{ base: "30px", sm: "60px" }}
         />
         <SearchInput onSearch={onSearch} />
-        <ColorModeSwitch />
+
+        <HStack marginRight={"12px"}>
+          <Switch
+            id="switch"
+            colorScheme="green"
+            isChecked={colorMode === "dark"}
+            onChange={toggleColorMode}
+          />
+          <Text fontWeight={"bold"} fontSize={"16px"}>
+            {<BsMoonFill />}
+          </Text>
+        </HStack>
       </HStack>
     </>
   );
