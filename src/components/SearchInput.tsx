@@ -24,7 +24,7 @@ function SearchInput({ onSearch }: Props) {
           ref={ref}
           w={{ base: "150px", sm: "250px", md: "450px", lg: "650px" }}
           borderRadius={20}
-          placeholder="Search games..."
+          placeholder="Search for games..."
           variant={"filled"}
         />
       </InputGroup>
