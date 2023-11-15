@@ -39,7 +39,10 @@ function SortSelector({ onSelectSortOrder, sortOrder }: Props) {
             rightIcon={<BsChevronDown />}
             textAlign={"left"}
           >
-            Order by: {currentSortOrder?.label}
+            Order by:{" "}
+            {currentSortOrder?.label === undefined
+              ? "Relevance"
+              : currentSortOrder?.label}
           </MenuButton>
           <MenuList marginLeft={0} minW="0" w={"200px"}>
             {sortOrders.map((order) => (
