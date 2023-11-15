@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -17,10 +18,10 @@ interface Props {
 }
 
 function GenreList({ onSelectGenre, selectedGenre }: Props) {
-  const { data, loading, error } = useGenres();
+  const { data, isLoading, error } = useGenres();
 
   if (error) return null;
-  if (loading)
+  if (isLoading)
     return (
       <Box width={"265px"} height={"265px"}>
         <Spinner marginTop={"32px"} marginLeft={"24px"} />
@@ -29,8 +30,11 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
 
   return (
     <>
-      <List marginTop={"32px"} width={"265px"}>
-        {data.map((genre) => (
+      <Heading marginLeft={4} marginTop={8} as="h2">
+        Genres
+      </Heading>
+      <List marginTop={"16px"} width={"265px"}>
+        {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY={"4px"}>
             <HStack paddingX={5}>
               <Image
