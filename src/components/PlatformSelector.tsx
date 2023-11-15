@@ -34,7 +34,7 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
             {selectedPlatform?.name || "Platforms"}
           </MenuButton>
           <MenuList marginLeft={0} minW="0" w={"200px"}>
-            {data.map((platform) => (
+            {data?.results.map((platform) => (
               <MenuItem
                 padding={1}
                 minW="0"
