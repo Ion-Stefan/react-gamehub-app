@@ -8,15 +8,12 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import usePlatforms from "../hooks/usePlatforms";
-import { Platform } from "../hooks/usePlatforms";
 import usePlatform from "../hooks/usePlatform";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectPlatform: (platform: Platform) => void;
-  selectedPlatformId?: number;
-}
-
-function PlatformSelector({ onSelectPlatform, selectedPlatformId }: Props) {
+function PlatformSelector() {
+  const selectedPlatformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const setPlatfromId = useGameQueryStore((s) => s.setPlatformId);
   const { data, error } = usePlatforms();
   const selectedPlatform = usePlatform(selectedPlatformId);
 
@@ -41,7 +38,7 @@ function PlatformSelector({ onSelectPlatform, selectedPlatformId }: Props) {
                 padding={1}
                 minW="0"
                 w={"200px"}
-                onClick={() => onSelectPlatform(platform)}
+                onClick={() => setPlatfromId(platform.id)}
                 key={platform.id}
                 textAlign={"left"}
               >

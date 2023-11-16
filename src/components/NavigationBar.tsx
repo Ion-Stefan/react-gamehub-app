@@ -3,11 +3,7 @@ import SearchInput from "./SearchInput";
 import { HStack, Switch, Text, useColorMode, Image } from "@chakra-ui/react";
 import { BsMoonFill } from "react-icons/bs";
 
-export interface Color {
-  onSearch: (searchText: string) => void;
-}
-
-function NavigationBar({ onSearch }: Color) {
+function NavigationBar() {
   function refreshPage() {
     window.location.reload();
   }
@@ -28,7 +24,7 @@ function NavigationBar({ onSearch }: Color) {
           src={logo}
           boxSize={{ base: "30px", sm: "60px" }}
         />
-        <SearchInput onSearch={onSearch} />
+        <SearchInput />
 
         <HStack marginRight={"12px"}>
           <Switch
