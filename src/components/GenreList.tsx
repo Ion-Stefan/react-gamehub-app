@@ -8,9 +8,9 @@ import {
   ListItem,
   Spinner,
 } from "@chakra-ui/react";
-import useGenres from "../hooks/useGenre";
+import useGenres from "../hooks/useGenres";
 import getCroppedImageURL from "../services/image-url";
-import { Genre } from "../hooks/useGenre";
+import { Genre } from "../hooks/useGenres";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
