@@ -2,9 +2,12 @@ import logo from "../assets/logo_black.svg";
 import SearchInput from "./SearchInput";
 import { HStack, Switch, Text, useColorMode, Image } from "@chakra-ui/react";
 import { BsMoonFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 function NavigationBar() {
+  const navigate = useNavigate();
   function refreshPage() {
+    navigate("/");
     window.location.reload();
   }
   const { toggleColorMode, colorMode } = useColorMode();
