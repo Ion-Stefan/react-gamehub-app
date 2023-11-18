@@ -8,6 +8,8 @@ import useGameQueryStore from "../store";
 const apiClient = new APIClient<Game>("/games");
 
 export interface Game {
+  description_raw: string;
+  slug: string;
   id: number;
   name: string;
   background_image: string;
