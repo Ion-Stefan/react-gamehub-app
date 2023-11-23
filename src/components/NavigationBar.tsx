@@ -20,7 +20,7 @@ function NavigationBar() {
   return (
     <>
       <HStack
-        paddingX={4}
+        paddingX={{ base: 4, md: 12 }}
         alignItems={"center"}
         marginTop={"32px"}
         justifyContent={"space-between"}
@@ -34,7 +34,7 @@ function NavigationBar() {
         />
         <SearchInput />
 
-        <HStack marginRight={"12px"}>
+        <HStack marginRight={{ base: "12px", md: "36px" }}>
           <Switch
             id="switch"
             colorScheme="green"
